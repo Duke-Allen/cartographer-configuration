@@ -1,2 +1,2 @@
 # cartographer-configuration
-Here are my configuration for running cartographer
+Here are my configuration for running cartographer only with lidar
