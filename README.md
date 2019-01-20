@@ -1,2 +1,2 @@
 # cartographer-configuration
-Here are my configuration for running cartographer only with lidar
+Here are my configuration for running cartographer with lidar and IMU
