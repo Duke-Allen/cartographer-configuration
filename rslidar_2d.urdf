@@ -1,0 +1,169 @@
+<robot
+  name="myrobot_udrf">
+   <link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 1.57075"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.25 .16 .05"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+  </link>
+
+
+  <link
+    name="right_front_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length=".02" radius="0.025"/>
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="right_front_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.08 0.1 -0.03"
+      rpy="0 1.57075 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_front_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="left_front_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length=".02" radius="0.025"/>
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="left_front_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="-0.08 0.1 -0.03"
+      rpy="0 1.57075 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="right_back_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length=".02" radius="0.025"/>
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="right_back_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.08 -0.1 -0.03"
+      rpy="0 1.57075 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_back_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link
+    name="left_back_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <cylinder length=".02" radius="0.025"/>
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="left_back_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="-0.08 -0.1 -0.03"
+      rpy="0 1.57075 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_back_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <link name="rslidar">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.05" radius="0.05" />
+      </geometry>
+      <material name="green" />
+    </visual>
+  </link>
+  <joint name="horizontal_laser_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="rslidar" />
+    <origin xyz="0 -0.075 0.04" rpy="0 0 0" />
+  </joint>
+
+  <link name="imu">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.05" radius="0.01" />
+      </geometry>
+      <material name="yellow" />
+    </visual>
+  </link>
+  <joint name="imu_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu" />
+    <origin xyz="0 0 0.04" rpy="0 0 0" />
+  </joint>
+</robot>
