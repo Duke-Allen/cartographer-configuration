@@ -28,7 +28,7 @@
           -configuration_basename rslidar_scan_3d.lua"
       output="screen">
       <remap from="/points2" to="/rslidar_points" />
-<!--      <remap from="/imu" to="/xqserial_server/IMU" /> -->
+      <remap from="/imu" to="/IMU" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
