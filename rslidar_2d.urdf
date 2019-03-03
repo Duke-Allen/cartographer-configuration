@@ -5,9 +5,9 @@
     <visual>
       <origin
         xyz="0 0 0"
-        rpy="0 0 1.57075" />
+        rpy="0 0 0" />
       <geometry>
-        <box size="0.4284 .415 .15"/>
+        <box size="0.415 .4284 .15"/>
       </geometry>
       <material
         name="">
@@ -16,6 +16,13 @@
       </material>
     </visual>
   </link>
+
+  <link name="base_footprint"/>
+  <joint name="base_link_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.117635" />
+  </joint>
 
   <link
     name="right_front_wheel">
@@ -37,8 +44,8 @@
     name="right_front_wheel_joint"
     type="fixed">
     <origin
-      xyz="0.2142 0.205 -0.06"
-      rpy="0 1.57075 0" />
+      xyz="0.205 -0.2142 -0.06"
+      rpy="1.57075 0 0" />
     <parent
       link="base_link" />
     <child
@@ -67,8 +74,8 @@
     name="left_front_wheel_joint"
     type="fixed">
     <origin
-      xyz="-0.2142 0.205 -0.06"
-      rpy="0 1.57075 0" />
+      xyz="0.205 .2142 -0.06"
+      rpy="1.57075 0 0" />
     <parent
       link="base_link" />
     <child
@@ -97,8 +104,8 @@
     name="right_back_wheel_joint"
     type="fixed">
     <origin
-      xyz="0.2142 -0.205 -0.06"
-      rpy="0 1.57075 0" />
+      xyz="-0.205 -0.2142 -0.06"
+      rpy="1.57075 0 0" />
     <parent
       link="base_link" />
     <child
@@ -127,8 +134,8 @@
     name="left_back_wheel_joint"
     type="fixed">
     <origin
-      xyz="-0.2142 -0.205 -0.06"
-      rpy="0 1.57075 0" />
+      xyz="-0.205 0.2142 -0.06"
+      rpy="1.57075 0 0" />
     <parent
       link="base_link" />
     <child
@@ -149,9 +156,9 @@
     </visual>
   </link>
   <joint name="horizontal_laser_link_joint" type="fixed">
-    <parent link="base_link" />
+    <parent link="top_link" />
     <child link="rslidar" />
-    <origin xyz="0 -0.07 0.466" rpy="0 0 0" />
+    <origin xyz="-0.07 0 0.04135" rpy="0 0 0" />
   </joint>
 
   <link name="imu">
@@ -166,9 +173,9 @@
     </visual>
   </link>
   <joint name="imu_link_joint" type="fixed">
-    <parent link="base_link" />
+    <parent link="middle_link" />
     <child link="imu" />
-    <origin xyz="-0.023 0 0.4" rpy="0 0 3.14159" />
+    <origin xyz="0 0.023 0.02" rpy="0 0 3.14159" />
   </joint>
 
   <link name="pillar_right_front">
@@ -185,7 +192,7 @@
   <joint name="pillar_right_front_joint" type="fixed">
     <parent link="base_link" />
     <child link="pillar_right_front" />
-    <origin xyz="0.15 0.15 0.19" rpy="0 0 0" />
+    <origin xyz="0.15 -0.15 0.19" rpy="0 0 0" />
   </joint>
 
   <link name="pillar_right_back">
@@ -202,7 +209,7 @@
   <joint name="pillar_right_back_joint" type="fixed">
     <parent link="base_link" />
     <child link="pillar_right_back" />
-    <origin xyz="0.15 -0.15 0.19" rpy="0 0 0" />
+    <origin xyz="-0.15 -0.15 0.19" rpy="0 0 0" />
   </joint>
 
   <link name="pillar_left_front">
@@ -219,7 +226,7 @@
   <joint name="pillar_left_front_joint" type="fixed">
     <parent link="base_link" />
     <child link="pillar_left_front" />
-    <origin xyz="-0.15 0.15 0.19" rpy="0 0 0" />
+    <origin xyz="0.15 0.15 0.19" rpy="0 0 0" />
   </joint>
 
   <link name="pillar_left_back">
@@ -236,14 +243,14 @@
   <joint name="pillar_left_back_joint" type="fixed">
     <parent link="base_link" />
     <child link="pillar_left_back" />
-    <origin xyz="-0.15 -0.15 0.19" rpy="0 0 0" />
+    <origin xyz="-0.15 0.15 0.19" rpy="0 0 0" />
   </joint>
 
   <link name="middle_link">
    <visual>
      <origin xyz="0 0 0"/>
      <geometry>
-       <box size="0.4284 .415 .001"/>
+       <box size="0.415 .4284 .001"/>
      </geometry>
      <material
        name="">
@@ -272,7 +279,7 @@
   <joint name="top_pillar_right_front_joint" type="fixed">
     <parent link="middle_link" />
     <child link="top_pillar_right_front" />
-    <origin xyz="0.1 -0.04 0.022" rpy="0 0 0" />
+    <origin xyz="-0.04 -0.1 0.022" rpy="0 0 0" />
   </joint>
 
   <link name="top_pillar_right_back">
@@ -289,7 +296,7 @@
   <joint name="top_pillar_right_back_joint" type="fixed">
     <parent link="middle_link" />
     <child link="top_pillar_right_back" />
-    <origin xyz="0.1 -0.1 0.022" rpy="0 0 0" />
+    <origin xyz="-0.1 -0.1 0.022" rpy="0 0 0" />
   </joint>
 
   <link name="top_pillar_left_front">
@@ -306,7 +313,7 @@
   <joint name="top_pillar_left_front_joint" type="fixed">
     <parent link="middle_link" />
     <child link="top_pillar_left_front" />
-    <origin xyz="-0.1 -0.04 0.022" rpy="0 0 0" />
+    <origin xyz="-0.04 0.1 0.022" rpy="0 0 0" />
   </joint>
 
   <link name="top_pillar_left_back">
@@ -323,14 +330,14 @@
   <joint name="top_pillar_left_back_joint" type="fixed">
     <parent link="middle_link" />
     <child link="top_pillar_left_back" />
-    <origin xyz="-0.1 -0.1 0.022" rpy="0 0 0" />
+    <origin xyz="-0.1 0.1 0.022" rpy="0 0 0" />
   </joint>
 
   <link name="top_link">
    <visual>
      <origin xyz="0 0 0"/>
      <geometry>
-       <box size="0.415 .2142 .001"/>
+       <box size="0.2142 .415 .001"/>
      </geometry>
      <material
        name="">
@@ -342,7 +349,7 @@
   <joint name="top_link_joint" type="fixed">
     <parent link="middle_link" />
     <child link="top_link" />
-    <origin xyz="0 -0.07 0.04465" rpy="0 0 0" />
+    <origin xyz="-0.07 0 0.04465" rpy="0 0 0" />
   </joint>
 
 </robot>
