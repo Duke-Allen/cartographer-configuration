@@ -58,6 +58,8 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
         base_link:
           Value: true
         right_front_wheel:
@@ -101,19 +103,16 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-            base_link:
+            base_footprint:
+              base_link:
                 right_front_wheel::
                   {}
                 left_front_wheel:
-                  {}
-                imu:
-                  {}
+                  {} 
                 right_back_wheel:
                   {}
                 left_back_wheel:
-                  {}
-                rslidar:
-                  {}
+                  {}  
                 pillar_left_back:
                   {}
                 pillar_left_front:
@@ -123,8 +122,11 @@ Visualization Manager:
                 pillar_right_front:
                   {}
                 middle_link:
-                  top_link:
+                  imu:
                     {}
+                  top_link:
+                    rslidar:
+                     {}
                   top_pillar_left_back:
                     {}
                   top_pillar_left_front:
@@ -145,88 +147,92 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
         base_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
         right_front_wheel:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         left_front_wheel:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         imu:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         right_back_wheel:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         left_back_wheel:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         rslidar:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         pillar_left_back:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         pillar_left_front:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         pillar_right_back:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         pillar_right_front:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         middle_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         top_link:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         top_pillar_left_back:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         top_pillar_left_front:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         top_pillar_right_back:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
         top_pillar_right_front:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
           Value: true
       Name: RobotModel
@@ -412,7 +418,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
+      Class: rviz/TopDownOrtho
       Distance: 39.7251205
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
