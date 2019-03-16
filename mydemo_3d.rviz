@@ -121,12 +121,13 @@ Visualization Manager:
                   {}
                 pillar_right_front:
                   {}
+                imu:
+                  {}
+                rslidar:
+                  {}
                 middle_link:
-                  imu:
-                    {}
                   top_link:
-                    rslidar:
-                     {}
+                    {}
                   top_pillar_left_back:
                     {}
                   top_pillar_left_front:
