@@ -156,9 +156,9 @@
     </visual>
   </link>
   <joint name="horizontal_laser_link_joint" type="fixed">
-    <parent link="top_link" />
+    <parent link="base_link" />
     <child link="rslidar" />
-    <origin xyz="-0.07 0 0.04135" rpy="0 0 0" />
+    <origin xyz="-0.07 0 0.466" rpy="0 0 0" />
   </joint>
 
   <link name="imu">
@@ -173,9 +173,9 @@
     </visual>
   </link>
   <joint name="imu_link_joint" type="fixed">
-    <parent link="middle_link" />
+    <parent link="base_link" />
     <child link="imu" />
-    <origin xyz="0 0.023 0.02" rpy="0 0 3.14159" />
+    <origin xyz="0 0.023 0.4" rpy="0 0 -1.57075" />
   </joint>
 
   <link name="pillar_right_front">
